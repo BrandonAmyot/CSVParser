@@ -20,3 +20,7 @@ with open('CSV/Test_Starbucks/profile_cookies.csv') as csvfile:
 difference = list(set(publicCookies) - set(homeCookies))
 for list in difference:
     print (list)
+
+file = open("output.txt", 'w')
+file.write(', \n'.join(difference))
+file.close()
