@@ -2,22 +2,27 @@ import csv
 # Get cookie domain names
 with open('CSV/Test_HomeNetwork/profile_cookies.csv') as csvfile:
     reader = csv.DictReader(csvfile)
-    homeNetworkCookies = []
+    homeCookies = []
     for row in reader:
-        homeNetworkCookies.append(row['baseDomain'])
+        homeCookies.append(row['baseDomain'])
+    homeCookies = list(set(homeCookies))
 
 with open('CSV/Test_Starbucks/profile_cookies.csv') as csvfile:
     reader = csv.DictReader(csvfile)
-    starbucksCookies = []
+    publicCookies = []
     for row in reader:
-        starbucksCookies.append(row['baseDomain'])
+        publicCookies.append(row['baseDomain'])
+    publicCookies = list(set(publicCookies))
 
 ###############################################################################
-    
-    for list in homeNetworkCookies:
-        print (list)
+extraPublicCookies = []
 
-    print("\n******STARBUCKS******")
+for public in publicCookies:
+    for home in homeCookies:
+        if public != home:
+            extraPublicCookies.append(public)
 
-    for list in starbucksCookies:
-        print (list)
+extraPublicCookies = list(set(extraPublicCookies))
+
+for list in extraPublicCookies:
+    print(list)
