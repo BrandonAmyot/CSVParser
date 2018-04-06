@@ -15,14 +15,8 @@ with open('CSV/Test_Starbucks/profile_cookies.csv') as csvfile:
     publicCookies = list(set(publicCookies))
 
 ###############################################################################
-extraPublicCookies = []
 
-for public in publicCookies:
-    for home in homeCookies:
-        if public != home:
-            extraPublicCookies.append(public)
+difference = list(set(publicCookies) - set(homeCookies))
 
-extraPublicCookies = list(set(extraPublicCookies))
-
-for list in extraPublicCookies:
-    print(list)
+for list in difference:
+    print (list)
