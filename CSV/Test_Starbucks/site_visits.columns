@@ -1,0 +1,4 @@
+"name","type"
+"visit_id","INT"
+"crawl_id","INT"
+"site_url","VARCHAR(500)"

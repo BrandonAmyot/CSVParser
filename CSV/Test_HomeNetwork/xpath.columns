@@ -1,0 +1,7 @@
+"name","type"
+"id","INT"
+"name","VARCHAR(100)"
+"url","VARCHAR(500)"
+"xpath","VARCHAR(500)"
+"absolute_xpath","VARCHAR(500)"
+"ctime","DATETIME"
