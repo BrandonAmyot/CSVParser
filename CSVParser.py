@@ -1,6 +1,6 @@
 import csv
 home = 'Test_HomeNetwork'
-public = 'Test_Concordia'
+public = 'Test_LeVietSub'
 
 # Get cookie domain names from home network
 with open('CSV/'+home+'/profile_cookies.csv') as csvfile:
@@ -23,6 +23,8 @@ cookieDifference = (set(publicCookies) - set(homeCookies))
 for list in cookieDifference:
     print (list)
 
+cookies_total = "\nCookies Total: " + str(len(cookieDifference))
+print(cookies_total)
 # Get 3rd party scripts
 with open('CSV/'+home+'/http_responses.csv') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -32,8 +34,6 @@ with open('CSV/'+home+'/http_responses.csv') as csvfile:
             homeScripts.append(row['url'])
     homeScripts = set(homeScripts)
 
-for list in homeScripts:
-    print(list)
 
 # Get 3rd party scripts
 with open('CSV/'+public+'/http_responses.csv') as csvfile:
@@ -48,13 +48,17 @@ scriptDifference = (set(publicScripts) - set(homeScripts))
 for list in scriptDifference:
     print (list)
 
+scripts_total = "\nScripts Total: " + str(len(scriptDifference))
+print(scripts_total)
 # finalResult = cookieDifference.j
 
-file = open('output.txt', 'w')
+file = open('output'+ public + '.txt', 'w')
 file.write('COOKIES\n')
 file.write(', \n'.join(cookieDifference))
+file.write(cookies_total)
 file.close()
-file = open('output.txt', 'a')
+file = open('output'+ public + '.txt', 'a')
 file.write('\n\n3RD PARTY SCRIPTS\n')
 file.write(', \n'.join(scriptDifference))
+file.write(scripts_total)
 file.close()

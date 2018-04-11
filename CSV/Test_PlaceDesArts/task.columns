@@ -1,0 +1,6 @@
+"name","type"
+"task_id","INT"
+"start_time","DATETIME"
+"manager_params","TEXT"
+"openwpm_version","TEXT"
+"browser_version","TEXT"
