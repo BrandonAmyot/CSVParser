@@ -1,0 +1,7 @@
+"name","type"
+"id","INT"
+"crawl_id","INT"
+"page_url","VARCHAR(500)"
+"scope","TEXT"
+"KEY","TEXT"
+"value","TEXT"

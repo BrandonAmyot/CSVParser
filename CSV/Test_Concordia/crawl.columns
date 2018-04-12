@@ -1,8 +1,0 @@
-"name","type"
-"crawl_id","INT"
-"task_id","INT"
-"browser_params","TEXT"
-"screen_res","TEXT"
-"ua_string","TEXT"
-"finished","TEXT"
-"start_time","DATETIME"

@@ -1,0 +1,6 @@
+"name","type"
+"crawl_id","INT"
+"command","TEXT"
+"arguments","TEXT"
+"bool_success","INT"
+"dtg","DATETIME"
