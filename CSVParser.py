@@ -10,7 +10,6 @@ with open('CSV/'+home+'/profile_cookies.csv') as csvfile:
         homeCookies.append(row['baseDomain'])
     homeCookies = set(homeCookies)
 
-print("Home Cookies:" + str(len(homeCookies)))
 # Get cookie domain names from public network
 with open('CSV/'+public+'/profile_cookies.csv') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -19,7 +18,9 @@ with open('CSV/'+public+'/profile_cookies.csv') as csvfile:
         publicCookies.append(row['baseDomain'])
     publicCookies = set(publicCookies)
 
-homeInfo = "\nHome Cookies:" + str(len(homeCookies)) + "\nPublic Cookies:" + str(len(publicCookies)) + "\nTotal Cookies: " + (str(len(homeCookies) + len(publicCookies)) + '\n')
+homeInfo = "\nHome Cookies:" + str(len(homeCookies)) + \
+           "\nPublic Cookies:" + str(len(publicCookies)) + \
+           "\nTotal Cookies: " + (str(len(homeCookies) + len(publicCookies)) + '\n')
 
 # Find and print cookies present on public networks that are not present on home networks
 cookieDifference = (set(publicCookies) - set(homeCookies))
@@ -46,7 +47,9 @@ with open('CSV/'+public+'/http_responses.csv') as csvfile:
             publicScripts.append(row['url'])
     publicScripts = set(publicScripts)
 
-publicInfo = "\nHome Scripts: " + str(len(homeScripts)) + "\nPublic Scripts: " + str(len(publicScripts)) +"\nTotal Scripts: " + (str(len(homeScripts) + len(publicScripts)) +'\n')
+publicInfo = "\nHome Scripts: " + str(len(homeScripts)) + \
+             "\nPublic Scripts: " + str(len(publicScripts)) + \
+             "\nTotal Scripts: " + (str(len(homeScripts) + len(publicScripts)) +'\n')
 
 scriptDifference = (set(publicScripts) - set(homeScripts))
 for list in scriptDifference:
