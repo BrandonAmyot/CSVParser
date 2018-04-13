@@ -1,6 +1,6 @@
 import csv
 home = 'Test_HomeNetwork'
-public = 'Test_HomeWithBlockers'
+public = 'Test_VPN'
 
 # Get cookie domain names from home network
 with open('CSV/'+home+'/profile_cookies.csv') as csvfile:
